@@ -51,7 +51,7 @@ jobs:
       - run: |
           python -m pip install --upgrade pip
           pip install lz4
-      - run: make MODEL=n0110 epsilon.dfu
+      # - run: make MODEL=n0110 epsilon.dfu
       # - run: make MODEL=n0110 kernel.A.elf
       # - run: make MODEL=n0110 userland.A.elf
       # - run: make MODEL=n0110 userland.onboarding.beta.A.elf
@@ -60,12 +60,12 @@ jobs:
       # - run: make MODEL=n0110 kernel.B.elf
       # - run: make MODEL=n0110 userland.B.elf
       # - run: make MODEL=n0110 userland.test.B.elf
-      # - run: make MODEL=n0110 flasher.dfu
+      - run: make MODEL=n0110 flasher.dfu
       # - run: make MODEL=n0110 bench.ram.dfu
       - uses: actions/upload-artifact@master
         with:
-          name: epsilon-n0110.dfu
-          path: output/release/device/n0110/epsilon.dfu
+          name: epsilon-16-flasher.dfu
+          path: output/release/device/n0110/flasher.dfu
   windows:
     runs-on: windows-latest
     defaults:
