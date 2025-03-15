@@ -6,6 +6,12 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:  
+    inputs:
+      customInput:  
+        description: 'Custom input for manual trigger'
+        required: false
+        default: 'default value'
 
 env:
   MAKEFLAGS: '-j2'
